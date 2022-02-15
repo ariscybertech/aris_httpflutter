@@ -14,11 +14,8 @@ class HttpService {
     if (res.statusCode == 200) {
       List<dynamic> body = jsonDecode(res.body);
 
-      List<Post> posts = body
-          .map(
-            (dynamic item) => Post.fromJson(item),
-          )
-          .toList();
+      List<Post> posts =
+          body.map((dynamic item) => Post.fromJson(item)).toList();
 
       return posts;
     } else {
@@ -42,11 +39,8 @@ class HttpService {
     if (res.statusCode == 200) {
       List<dynamic> body = jsonDecode(res.body);
 
-      List<Todo> todos = body
-          .map(
-            (dynamic item) => Todo.fromJson(item),
-          )
-          .toList();
+      List<Todo> todos =
+          body.map((dynamic item) => Todo.fromJson(item)).toList();
 
       return todos;
     } else {
