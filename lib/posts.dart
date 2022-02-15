@@ -19,19 +19,17 @@ class PostsPage extends StatelessWidget {
             List<Post> posts = snapshot.data;
             return ListView(
               children: posts
-                  .map(
-                    (Post post) => ListTile(
-                      title: Text(post.title),
-                      subtitle: Text("${post.userId}"),
-                      onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => PostDetail(
-                            post: post,
+                  .map((Post post) => ListTile(
+                        title: Text(post.title),
+                        subtitle: Text("${post.userId}"),
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => PostDetail(
+                              post: post,
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                  )
+                      ))
                   .toList(),
             );
           } else {
